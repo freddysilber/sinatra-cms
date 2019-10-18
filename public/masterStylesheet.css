@@ -2,8 +2,7 @@
     height: 100%;
     display: flex;
 }
-.loginBtn, .logoutBtn {
-    transition: .4s;
+.loginBtn, .signUpBtn {
     text-align: center;
     width: -webkit-fill-available;
     height: -webkit-fill-available;
@@ -13,7 +12,7 @@
     background: lightgreen;
     color: white;
 }
-.logoutBtn:hover {
+.signUpBtn:hover {
     background: lightcoral;
     color: white;
 }

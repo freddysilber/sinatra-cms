@@ -8,14 +8,26 @@
 </head>
 
 <body>
-    <div class="container">
-        <button class="loginBtn">
-            <h1 style="margin-top: 0%;"><em>Login</em></h1>
-        </button>
-        <button class="logoutBtn">
-            <h1 style="margin-top: 0%;"><em>Logout</em></h1>
-        </button>
-    </div>
+
+
+
+    <nav>
+        <% if logged_in? %>
+        <a href="/tweets/new"> Create Tweet </a>
+        <a href="/logout"> Log Out </a>
+        <p>Welcome, <%=current_user.username %></p>
+        <% else %>
+        <div class="container">
+            <a class="loginBtn" href="/login">
+                <h1 style="margin-top: 50%;"><em>Login</em></h1>
+            </a>
+            <a class="signUpBtn" href="/signup">
+                <h1 style="margin-top: 50%;"><em>Sign Up</em></h1>
+            </a>
+        </div>
+        <%end %>
+    </nav>
+
 </body>
 
 </html>
