@@ -1,10 +1,10 @@
-class CreateProjectsTable < ActiveRecord::Migration
+class CreateProjectsTable < ActiveRecord::Migration[4.2]
     def change 
         create_table :projects do |p|
-            t.string :name
-            t.integer :user_id
+            p.string :name
+            p.integer :user_id
 
-            t.timestamps null: false
+            p.timestamps null: false
         end
     end
 end
