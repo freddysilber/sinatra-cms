@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
     get '/projects' do
         if logged_in?
             @projects = Project.all
-            erb :'projects/index'
+            erb :'projects/projects'
         else
             redirect to '/login'
         end
