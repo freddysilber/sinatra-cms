@@ -27,4 +27,12 @@ class UsersController < ApplicationController
         end
     end
 
+    get '/login' do
+        if !logged_in?
+            erb :'users/login'
+        else
+            redirect to '/projects'
+        end
+    end
+
 end
