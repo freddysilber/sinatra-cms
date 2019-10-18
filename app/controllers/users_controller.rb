@@ -23,9 +23,8 @@ class UsersController < ApplicationController
                 :password => params[:password]
             )
             @user.save
-            binding.pry
             session[:user_id] = @user.id
-            redirect to '/tweets'
+            redirect to '/projects'
         end
     end
 
