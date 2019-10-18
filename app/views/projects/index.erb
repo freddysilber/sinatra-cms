@@ -1,1 +1,9 @@
-<p>PROJECTS INDEX</p>
+<center>
+	<h1>Welcome backk, <%= current_user.username %></h1>
+	<h1>Your Projects</h1>
+	<% @projects.each do |p| %>
+	<div>
+		<%= p.name %>
+	</div>
+	<% end %>
+</center>
