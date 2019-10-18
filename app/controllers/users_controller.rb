@@ -1,3 +1,4 @@
+require 'pry'
 class UsersController < ApplicationController
     get '/users/:slug' do
         @user = User.find_by_slug(params[:slug])
@@ -22,6 +23,7 @@ class UsersController < ApplicationController
                 :password => params[:password]
             )
             @user.save
+            binding.pry
             session[:user_id] = @user.id
             redirect to '/tweets'
         end
