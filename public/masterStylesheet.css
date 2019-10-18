@@ -5,6 +5,13 @@ a {
     color: black;
     transition: .5s;
 }
+input {
+    border-radius: 5px;
+    border: 1px solid lightgray;
+}
+input:focus {
+    outline: none;
+}
 .container {
     height: 100%;
     display: flex;
@@ -24,4 +31,16 @@ a {
     background: lightskyblue;
     color: white;
     transition: .5s;
+}
+.homeBtn {
+    transition: .4s;
+    background: #666;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+}
+.homeBtn:hover {
+    transition: .4s;
+    background: rgb(158, 157, 157);
 }
