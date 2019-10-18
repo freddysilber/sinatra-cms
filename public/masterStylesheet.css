@@ -1,3 +1,6 @@
+html, input, a {
+    font-family: 'Nunito', sans-serif;
+}
 a {
     color: black;
     transition: .5s;

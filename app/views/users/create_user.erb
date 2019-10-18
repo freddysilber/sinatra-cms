@@ -1,0 +1,33 @@
+<center>
+<br/>
+<br/>
+<br/>
+<br/>
+<h1>Users</h1>
+<% unless locals.empty? %>
+  <h3><em><%= message %></em></h3>
+<% end %>
+<br/>
+<br/>
+<form action="/signup" method="POST">
+  <label for="username">Username</label>
+  <input type="text" name="username">
+  <br/> 
+  <br/> 
+  <label for="email">Email</label>
+  <input type="text" name="email">
+  <br/>
+  <br/>
+  <label for="password">Password</label>
+  <input type="text" name="password">
+  <br/>
+  <br/>
+  <input type="submit">
+</form>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <%# lets add this as a button icon later  %>
+<button><a href="/">Back</a></button>
+</center>
