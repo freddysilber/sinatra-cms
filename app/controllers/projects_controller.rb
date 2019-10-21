@@ -1,5 +1,4 @@
 class ProjectsController < ApplicationController
-
     get '/projects' do
         if logged_in?
             @projects = Project.all
