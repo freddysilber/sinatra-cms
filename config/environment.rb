@@ -1,19 +1,22 @@
+ENV['SINATRA_ENV'] ||= "development"
+
 require 'bundler/setup'
-# Bundler.require
 Bundler.require(:default, ENV['SINATRA_ENV'])
 
-configure :development do
-  set :database, 'sqlite3:db/database.db'
+def fi_check_migration
+  begin
+    ActiveRecord::Migration.check_pending!
+  rescue ActiveRecord::PendingMigrationError
+    raise ActiveRecord::PendingMigrationError.new <<-DBMSG
+      Migrations are pending. To resolve this issue, run:
+      rake db:migrate SINATRA_ENV=test
+      DBMSG
+  end
 end
-
-# ENV['SINATRA_ENV'] ||= "development"
 
 ActiveRecord::Base.establish_connection(
   :adapter => "sqlite3",
   :database => "db/#{ENV['SINATRA_ENV']}.sqlite"
 )
 
-require_relative "../app/controllers/application_controller.rb"
-
-Dir[File.join(File.dirname(__FILE__), "../app/models", "*.rb")].each {|f| require f}
-Dir[File.join(File.dirname(__FILE__), "../app/controllers", "*.rb")].sort.each {|f| require f}
+require_all 'app'
