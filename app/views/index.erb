@@ -11,25 +11,13 @@
     <nav>
         <% if logged_in? %>
         <center>
+            <h1>HOME PAGE</h1>
             <p style="margin-bottom: 10rem">Welcome, <%=current_user.username %>!</p>
-            <a class="button" href="/newproject">New Project</a>
-            <a class="button" href="/newtask">New Task</a>
-            <a class="button" href="/logout"> Log Out </a>
         </center>
         <% else %>
-        <div>
-            <center>
-                <p>Welcome to your personal task manager!</p>
-            </center>
-            <div class="container">
-                <a class="loginBtn" href="/login">
-                    <h1 style="margin-top: 50%;"><em>Login</em></h1>
-                </a>
-                <a class="signUpBtn" href="/signup">
-                    <h1 style="margin-top: 50%;"><em>Sign Up</em></h1>
-                </a>
-            </div>
-        </div>
+        <center>
+        <p>You are not logged in</p>
+        </center>
         <%end %>
     </nav>
 </body>

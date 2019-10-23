@@ -1,16 +1,8 @@
 <h1>Welcome, <%= current_user.username %>!</h1>
-<br />
-<br />
-<br />
 <center>
-	<h1>Your Projects...</h1>
+	<h1>My Projects...</h1>
 	<% @projects.each do |p| %>
 	<div>Project: <b><em><%= p.name %></em></b></div>
 	<% end %>
 	<br />
-	<a class="button" href="/newproject">New Project</a>
-	<a class="button" href="/newtask">New Task</a>
-	<a class="button" href="/tasks">View Tasks</a>
-	<a class="button" href="/logout">Logout</a>
-	<a class="button" href="/">Home</a>
 </center>

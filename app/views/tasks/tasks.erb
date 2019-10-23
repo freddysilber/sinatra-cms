@@ -1,15 +1,7 @@
 <h1>Welcome, <%= current_user.username %>!</h1>
-<br />
-<br />
-<br />
 <center>
 	<h1>Your Tasks...</h1>
 	<% @tasks.each do |t| %>
 	<div>Project: <b><em><%= t.name %></em></b></div>
 	<% end %>
-	<br />
-	<a class="button" href="/newproject">New Project</a>
-	<a class="button" href="/newtask">New Task</a>
-	<a class="button" href="/projects">View Projects</a>
-	<a class="button" href="/logout">Logout</a>
 </center>

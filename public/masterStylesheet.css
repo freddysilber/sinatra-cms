@@ -19,7 +19,7 @@ input:focus {
 .loginBtn, .signUpBtn {
     text-align: center;
     width: -webkit-fill-available;
-    height: -webkit-fill-available;
+    height: calc(-webkit-fill-available);
     background: lightgray;
 }
 .loginBtn:hover {
@@ -56,27 +56,25 @@ input:focus {
     transition: .4s;
     background: rgb(158, 157, 157);
 }
-
-
-
-
-
+/* NAV BAR CSS */
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     width: 200px;
     background-color: #f1f1f1;
+    border-radius: 10px;
 }
-
 li a {
     display: block;
     color: #000;
     padding: 8px 16px;
     text-decoration: none;
+    margin: .25rem;
+    border-radius: 10px;
 }
-
 li a:hover {
     background-color: #555;
     color: white;
 }
+/* NAV BAR CSS */
