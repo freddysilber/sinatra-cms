@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>CMS Task Manager</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
     <nav>
         <% if logged_in? %>
-            <center>
-                <p>Welcome, <%=current_user.username %>!</p>
-                <a class="button" href="/newproject">Create Project</a>
-                <a class="button" href="/logout"> Log Out </a>
-            </center>
+        <center>
+            <p>Welcome, <%=current_user.username %>!</p>
+            <a class="button" href="/newproject">Create Project</a>
+            <a class="button" href="/logout"> Log Out </a>
+        </center>
         <% else %>
+        <div>
+            <center>
+                <p>Welcome to your personal task manager!</p>
+            </center>
             <div class="container">
                 <a class="loginBtn" href="/login">
                     <h1 style="margin-top: 50%;"><em>Login</em></h1>
@@ -22,7 +28,9 @@
                     <h1 style="margin-top: 50%;"><em>Sign Up</em></h1>
                 </a>
             </div>
+        </div>
         <%end %>
     </nav>
 </body>
+
 </html>

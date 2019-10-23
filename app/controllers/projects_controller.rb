@@ -15,4 +15,10 @@ class ProjectsController < ApplicationController
             redirect to '/login'
         end
     end
+
+    post '/createproject' do
+        @project = Project.new(:name => params[:name])
+        @project.save
+        redirect to '/projects'
+    end
 end
