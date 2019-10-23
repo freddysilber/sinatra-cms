@@ -3,12 +3,12 @@
 <br />
 <br />
 <center>
-	<h1>Your Projects...</h1>
-	<% @projects.each do |p| %>
-	<div>Project: <b><em><%= p.name %></em></b></div>
+	<h1>Your Tasks...</h1>
+	<% @tasks.each do |t| %>
+	<div>Project: <b><em><%= t.name %></em></b></div>
 	<% end %>
 	<br />
 	<a class="button" href="/newproject">New Project</a>
-	<a class="button" href="/newtask">NewTask</a>
+	<a class="button" href="/newtask">New Task</a>
 	<a class="button" href="/logout">Logout</a>
 </center>
