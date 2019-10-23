@@ -7,14 +7,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body style="background: lightgray">
-	<h1>Welcome, <%= current_user.username %>!</h1>
+<body style="background: lightyellow">
 	<center>
+		<h1>Welcome, <%= current_user.username %>!</h1>
 		<h1>My Projects...</h1>
 		<% @projects.each do |p| %>
-		<div>Project: <b><em><%= p.name %></em></b></div>
+		<div>
+			<p>Project: <b><em><%= p.name %></em></b></p>
+		</div>
 		<% end %>
-		<br />
 	</center>
 </body>
 

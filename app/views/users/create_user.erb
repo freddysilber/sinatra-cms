@@ -2,35 +2,35 @@
 <html lang="en">
 
 <head>
-	<title>CMS Task Manager</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CMS Task Manager</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body style="background: lightcoral">
-<center>
-  <h1>Users</h1>
-  <% unless locals.empty? %>
-  <h3><em><%= message %></em></h3>
-  <% end %>
-  <br />
-  <br />
-  <form action="/signup" method="POST">
-    <label for="username">Username</label>
-    <input type="text" name="username">
+<body style="background: lightgreen">
+  <center>
+    <h1>Users</h1>
+    <% unless locals.empty? %>
+    <h3><em><%= message %></em></h3>
+    <% end %>
     <br />
     <br />
-    <label for="email">Email</label>
-    <input type="text" name="email">
-    <br />
-    <br />
-    <label for="password">Password</label>
-    <input type="text" name="password">
-    <br />
-    <br />
-    <input class="button" type="submit" value="Submit">
-  </form>
-</center>
+    <form action="/signup" method="POST">
+      <label for="username">Username</label>
+      <input type="text" name="username">
+      <br />
+      <br />
+      <label for="email">Email</label>
+      <input type="text" name="email">
+      <br />
+      <br />
+      <label for="password">Password</label>
+      <input type="text" name="password">
+      <br />
+      <br />
+      <input class="button" type="submit" value="Submit">
+    </form>
+  </center>
 </body>
 
 </html>

@@ -7,15 +7,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body style="background: lightcoral">
-	<h1>Welcome, <%= current_user.username %>!</h1>
+<body style="background: lightblue">
 	<center>
+		<h1>Welcome, <%= current_user.username %>!</h1>
 		<h1>Your Tasks...</h1>
 		<% @tasks.each do |t| %>
-		<div>Project: <b><em><%= t.name %></em></b></div>
+		<div>
+			<p>Task: <b><em><%= t.name %></em></b></p>
+		</div>
 		<% end %>
 	</center>
-
 </body>
 
 </html>
