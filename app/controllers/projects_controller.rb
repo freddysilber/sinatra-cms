@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
     get '/projects' do
         if logged_in?
             @projects = Project.all
+            @tasks = Task.all
             erb :'projects/projects'
         else
             redirect to '/login'

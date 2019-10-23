@@ -12,10 +12,16 @@
 		<h1>Welcome, <%= current_user.username %>!</h1>
 		<h1>Your Tasks...</h1>
 		<% @tasks.each do |t| %>
-		<div style="border: 1px solid black; border-radius: 10px">
+		<% if t.user_id == current_user[:id] %>
+		<div style="border: 1px solid black; border-radius: 10px; margin: .25rem;">
 			<p>Task: <b><em><%= t.name %></em></b></p>
-			<p>Project: <b><em><%= t.project_id %></em></b></p>
+			<% @projects.each do |p| %>
+			<% if p.id == t.project_id %>
+			<p>Project: <b><em><%= p.name %></em></b></p>
+			<% end %>
+			<% end %>
 		</div>
+		<% end %>
 		<% end %>
 	</center>
 </body>

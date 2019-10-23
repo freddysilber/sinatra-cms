@@ -2,6 +2,7 @@ class TasksController < ApplicationController
     get '/tasks' do
         if logged_in?
             @tasks = Task.all
+            @projects = Project.all
             erb :'tasks/tasks'
         else
             redirect to '/login'
@@ -20,7 +21,8 @@ class TasksController < ApplicationController
     post '/createtask' do
         @task = Task.new(
             :name => params[:name],
-            :project_id => params[:project_id]
+            :project_id => params[:project_id],
+            :user_id => current_user[:id]
         )
         @task.save
         redirect to '/tasks'
