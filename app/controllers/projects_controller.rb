@@ -17,7 +17,10 @@ class ProjectsController < ApplicationController
     end
 
     post '/createproject' do
-        @project = Project.new(:name => params[:name])
+        @project = Project.new(
+            :name => params[:name],
+            :user_id => current_user[:id]
+        )
         @project.save
         redirect to '/projects'
     end

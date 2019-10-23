@@ -12,8 +12,9 @@
 		<h1>Welcome, <%= current_user.username %>!</h1>
 		<h1>Your Tasks...</h1>
 		<% @tasks.each do |t| %>
-		<div>
+		<div style="border: 1px solid black; border-radius: 10px">
 			<p>Task: <b><em><%= t.name %></em></b></p>
+			<p>Project: <b><em><%= t.project_id %></em></b></p>
 		</div>
 		<% end %>
 	</center>

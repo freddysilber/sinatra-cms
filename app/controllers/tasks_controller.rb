@@ -17,7 +17,10 @@ class TasksController < ApplicationController
     end
 
     post '/createtask' do
-        @task = Task.new(:name => params[:name])
+        @task = Task.new(
+            :name => params[:name],
+            :project_id => params[:project_id]
+        )
         @task.save
         redirect to '/tasks'
     end
