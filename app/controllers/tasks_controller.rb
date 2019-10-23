@@ -10,6 +10,7 @@ class TasksController < ApplicationController
 
     get '/newtask' do
         if logged_in?
+            @projects = Project.all
             erb :'tasks/create_task'
         else
             redirect to '/login'
