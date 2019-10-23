@@ -11,7 +11,7 @@
     <nav>
         <% if logged_in? %>
         <center>
-            <p>Welcome, <%=current_user.username %>!</p>
+            <p style="margin-bottom: 10rem">Welcome, <%=current_user.username %>!</p>
             <a class="button" href="/newproject">New Project</a>
             <a class="button" href="/newtask">New Task</a>
             <a class="button" href="/logout"> Log Out </a>
