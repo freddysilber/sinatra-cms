@@ -1,7 +1,21 @@
-<h1>Welcome, <%= current_user.username %>!</h1>
-<center>
-	<h1>Your Tasks...</h1>
-	<% @tasks.each do |t| %>
-	<div>Project: <b><em><%= t.name %></em></b></div>
-	<% end %>
-</center>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>CMS Task Manager</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body style="background: lightcoral">
+	<h1>Welcome, <%= current_user.username %>!</h1>
+	<center>
+		<h1>Your Tasks...</h1>
+		<% @tasks.each do |t| %>
+		<div>Project: <b><em><%= t.name %></em></b></div>
+		<% end %>
+	</center>
+
+</body>
+
+</html>

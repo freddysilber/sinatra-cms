@@ -1,8 +1,21 @@
-<h1>Welcome, <%= current_user.username %>!</h1>
-<center>
-	<h1>My Projects...</h1>
-	<% @projects.each do |p| %>
-	<div>Project: <b><em><%= p.name %></em></b></div>
-	<% end %>
-	<br />
-</center>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>CMS Task Manager</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body style="background: lightgray">
+	<h1>Welcome, <%= current_user.username %>!</h1>
+	<center>
+		<h1>My Projects...</h1>
+		<% @projects.each do |p| %>
+		<div>Project: <b><em><%= p.name %></em></b></div>
+		<% end %>
+		<br />
+	</center>
+</body>
+
+</html>
