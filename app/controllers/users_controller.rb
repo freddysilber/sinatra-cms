@@ -24,7 +24,8 @@ class UsersController < ApplicationController
             )
             @user.save
             session[:user_id] = @user.id
-            redirect to '/projects'
+            # redirect to '/projects'
+            redirect to '/'
         end
     end
 

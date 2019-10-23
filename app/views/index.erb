@@ -11,12 +11,13 @@
     <nav>
         <% if logged_in? %>
         <center>
-            <h1>HOME PAGE</h1>
-            <p style="margin-bottom: 10rem">Welcome, <%=current_user.username %>!</p>
+            <h1>Welcome back, <%=current_user.username %>!</h1>
         </center>
         <% else %>
         <center>
-        <p>Log in to get started!</p>
+            <h1><em>Welcome to your personal task manager!</em></h1>
+            <br />
+            <h1><em>Sign up to get started</em></h1>
         </center>
         <%end %>
     </nav>
