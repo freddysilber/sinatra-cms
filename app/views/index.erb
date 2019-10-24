@@ -13,6 +13,12 @@
 		<center>
 			<h1>Welcome back, <%=current_user.username %>!</h1>
 		</center>
+		<h1>My Projects</h1>
+		<% @projects.each do |p| %>
+		<% if p.user_id == current_user.id %>
+		<p><%= p.name %></p>
+		<% end %>
+		<% end %>
 		<% else %>
 		<center>
 			<h1><em>Welcome to your personal task manager!</em></h1>
