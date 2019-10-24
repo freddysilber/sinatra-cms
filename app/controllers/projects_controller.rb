@@ -1,3 +1,4 @@
+require 'pry'
 class ProjectsController < ApplicationController
     get '/projects' do
         if logged_in?
@@ -24,5 +25,14 @@ class ProjectsController < ApplicationController
         )
         @project.save
         redirect to '/projects'
+    end
+
+    get '/projects/:id' do
+        if logged_in?
+            @project = Project.find(params[:id])
+            erb :'projects/show'
+        else
+            redirect to '/login'
+        end
     end
 end
