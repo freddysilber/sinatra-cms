@@ -17,7 +17,7 @@
 			<p>Project: <b><em><a href="/projects/<%=p.id%>"><%= p.name %></a></em></b></p>
 			<% @tasks.each do |t| %>
 			<% if t.project_id == p.id %>
-			<p>Task: <b><em><%= t.name %></em></b></p>
+			<p>Task: <b><em><a href="/tasks/<%=t.id%>"><%= t.name %></a></em></b></p>
 			<% end %>
 			<% end %>
 		</div>

@@ -2,31 +2,31 @@
 <html lang="en">
 
 <head>
-  <title>CMS Task Manager</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CMS Task Manager</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body style="background: orange">
-  <center>
-    <h1>Login to manage your list items and projects!</h1>
-    <% unless locals.empty? %>
-    <h3><em><%= message %></em></h3>
-    <% end %>
-    <br />
-    <br />
-    <form action="/login" method="POST">
-      <label for="username">Username</label>
-      <input type="text" name="username">
-      <br />
-      <br />
-      <label for="password">Password</label>
-      <input type="text" name="password">
-      <br />
-      <br />
-      <input class="button" type="submit" value="Login">
-    </form>
-  </center>
+	<center>
+		<h1>Login to manage your list items and projects!</h1>
+		<% unless locals.empty? %>
+		<h3><em><%= message %></em></h3>
+		<% end %>
+		<br />
+		<br />
+		<form action="/login" method="POST">
+			<label for="username">Username</label>
+			<input type="text" name="username">
+			<br />
+			<br />
+			<label for="password">Password</label>
+			<input type="text" name="password">
+			<br />
+			<br />
+			<input class="button" type="submit" value="Login">
+		</form>
+	</center>
 </body>
 
 </html>

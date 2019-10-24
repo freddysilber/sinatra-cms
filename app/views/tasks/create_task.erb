@@ -2,29 +2,29 @@
 <html lang="en">
 
 <head>
-    <title>CMS Task Manager</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CMS Task Manager</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body style="background: lightpink">
-    <center>
-        <h1>Create a Task</h1>
-        <form action="/createtask" method="post">
-            <label for="name">Task Name:</label>
-            <input type="text" name="name" />
-            <% @projects.each do |p| %>
-            <% if p.user_id == current_user[:id]%>
-            <label for="project_id"><%= p.name %></label>
-            <input type="checkbox" name="project_id" value="<%= p.id %>" />
-            <% end %>
-            <% end %>
-            <br />
-            <br />
-            <br />
-            <input class="button" type="submit" value="Submit" />
-        </form>
-    </center>
+	<center>
+		<h1>Create a Task</h1>
+		<form action="/createtask" method="post">
+			<label for="name">Task Name:</label>
+			<input type="text" name="name" />
+			<% @projects.each do |p| %>
+			<% if p.user_id == current_user[:id]%>
+			<label for="project_id"><%= p.name %></label>
+			<input type="checkbox" name="project_id" value="<%= p.id %>" />
+			<% end %>
+			<% end %>
+			<br />
+			<br />
+			<br />
+			<input class="button" type="submit" value="Submit" />
+		</form>
+	</center>
 </body>
 
 </html>

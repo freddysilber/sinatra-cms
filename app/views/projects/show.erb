@@ -2,22 +2,22 @@
 <html lang="en">
 
 <head>
-    <title>CMS Task Manager</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CMS Task Manager</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body style="background: lightyellow">
-    <center>
-        <h1><em><%= @project.name %></em></h1>
-        <ol>
-            <% @project.project_tasks.each do |t| %>
-            <li>
-                <p><%= t.name %></p>
-            </li>
-            <% end %>
-        </ol>
-    </center>
+	<center>
+		<h1><em><%= @project.name %></em></h1>
+		<ol>
+			<% @project.project_tasks.each do |t| %>
+			<li>
+				<p><%= t.name %></p>
+			</li>
+			<% end %>
+		</ol>
+	</center>
 </body>
 
 </html>

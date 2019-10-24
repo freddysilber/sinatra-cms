@@ -2,25 +2,25 @@
 <html lang="en">
 
 <head>
-    <title>CMS Task Manager</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CMS Task Manager</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body style="background: lightskyblue">
-    <nav>
-        <% if logged_in? %>
-        <center>
-            <h1>Welcome back, <%=current_user.username %>!</h1>
-        </center>
-        <% else %>
-        <center>
-            <h1><em>Welcome to your personal task manager!</em></h1>
-            <br />
-            <h1><em>Sign up or log in to get started!</em></h1>
-        </center>
-        <%end %>
-    </nav>
+	<nav>
+		<% if logged_in? %>
+		<center>
+			<h1>Welcome back, <%=current_user.username %>!</h1>
+		</center>
+		<% else %>
+		<center>
+			<h1><em>Welcome to your personal task manager!</em></h1>
+			<br />
+			<h1><em>Sign up or log in to get started!</em></h1>
+		</center>
+		<%end %>
+	</nav>
 </body>
 
 </html>

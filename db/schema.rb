@@ -12,27 +12,27 @@
 
 ActiveRecord::Schema.define(version: 3) do
 
-  create_table "projects", force: :cascade do |t|
-    t.string "name"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+	create_table "projects", force: :cascade do |t|
+		t.string "name"
+		t.integer "user_id"
+		t.datetime "created_at", null: false
+		t.datetime "updated_at", null: false
+	end
 
-  create_table "tasks", force: :cascade do |t|
-    t.string "name"
-    t.integer "project_id"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+	create_table "tasks", force: :cascade do |t|
+		t.string "name"
+		t.integer "project_id"
+		t.integer "user_id"
+		t.datetime "created_at", null: false
+		t.datetime "updated_at", null: false
+	end
 
-  create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.text "email"
-    t.string "password_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+	create_table "users", force: :cascade do |t|
+		t.string "username"
+		t.text "email"
+		t.string "password_digest"
+		t.datetime "created_at", null: false
+		t.datetime "updated_at", null: false
+	end
 
 end

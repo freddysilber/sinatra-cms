@@ -2,31 +2,31 @@
 <html lang="en">
 
 <head>
-    <title>CMS</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/masterStylesheet.css">
+	<title>CMS</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/masterStylesheet.css">
 </head>
 
 <body>
-    <% if logged_in? %>
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/projects">My Projects</a></li>
-        <li><a href="/tasks">My Tasks</a></li>
-        <li><a href="/newproject">New Project</a></li>
-        <li><a href="/newtask">New Task</a></li>
-        <li><a href="/logout">Logout</a></li>
-    </ul>
-    <% else %>
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/login">Login</a></li>
-        <li><a href="/signup">Sign Up</a></li>
-    </ul>
-    <% end %>
-    <%= yield %>
+	<% if logged_in? %>
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/projects">My Projects</a></li>
+		<li><a href="/tasks">My Tasks</a></li>
+		<li><a href="/newproject">New Project</a></li>
+		<li><a href="/newtask">New Task</a></li>
+		<li><a href="/logout">Logout</a></li>
+	</ul>
+	<% else %>
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/login">Login</a></li>
+		<li><a href="/signup">Sign Up</a></li>
+	</ul>
+	<% end %>
+	<%= yield %>
 </body>
 
 </html>
