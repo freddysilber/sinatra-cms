@@ -10,13 +10,24 @@
 <body style="background: lightyellow">
 	<center>
 		<h1><em><%= @project.name %></em></h1>
-		<ol>
+		<table>
+			<tr>
+				<th>Task Name</th>
+				<th>Completed?</th>
+				<th>Due Date</th>
+			</tr>
 			<% @project.project_tasks.each do |t| %>
-			<li>
-				<p><%= t.name %></p>
-			</li>
+			<tr>
+				<td><a href="/tasks/<%= t.id %>"><%= t.name %></a></td>
+				<td>
+					<input type="checkbox" value="false" disabled="disabled" />
+				</td>
+				<td>
+					<input type="datetime" />
+				</td>
+			</tr>
 			<% end %>
-		</ol>
+		</table>
 	</center>
 </body>
 

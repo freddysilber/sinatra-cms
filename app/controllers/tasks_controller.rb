@@ -30,5 +30,10 @@ class TasksController < ApplicationController
 
 	get '/tasks/:id' do
 		if logged_in?
+			@task = Task.find(params[:id])
+			erb :'tasks/show'
+		else
+			redirect to '/login'
+		end
 	end
 end
