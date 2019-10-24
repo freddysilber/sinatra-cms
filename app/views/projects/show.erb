@@ -13,7 +13,7 @@
 		<table>
 			<tr>
 				<th>Task Name</th>
-				<th>Completed?</th>
+				<th>Completed ?</th>
 				<th>Due Date</th>
 			</tr>
 			<% @project.project_tasks.each do |t| %>
@@ -23,7 +23,7 @@
 					<input type="checkbox" value="false" disabled="disabled" />
 				</td>
 				<td>
-					<input type="datetime" />
+					<input type="datetime" disabled="disabled" value="<%=Time.now%>" />
 				</td>
 			</tr>
 			<% end %>
