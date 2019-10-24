@@ -14,10 +14,10 @@
 		<% @tasks.each do |t| %>
 		<% if t.user_id == current_user[:id] %>
 		<div style="border: 1px solid black; border-radius: 10px; margin: .25rem;">
-			<p>Task: <b><em><%= t.name %></em></b></p>
+			<p>Task: <b><em><a href="/tasks/<%=t.id%>"><%= t.name %></a></em></b></p>
 			<% @projects.each do |p| %>
 			<% if p.id == t.project_id %>
-			<p>Project: <b><em><%= p.name %></em></b></p>
+			<p>Project: <b><em><a href="/projects/<%=t.project.id%>"><%= p.name %></a></em></b></p>
 			<% end %>
 			<% end %>
 		</div>

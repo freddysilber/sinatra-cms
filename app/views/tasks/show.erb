@@ -10,7 +10,7 @@
 <body style="background: lightyellow">
 	<center>
 		<h1><em><%= @task.name %></em></h1>
-		<h1><em><%= @task.project.name %></em></h1>
+		<h1><em>Project: <a href="/projects/<%= @task.project.id %>"><%= @task.project.name %></a></em></h1>
 	</center>
 </body>
 
