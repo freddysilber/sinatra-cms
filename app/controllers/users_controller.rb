@@ -24,7 +24,6 @@ class UsersController < ApplicationController
 			)
 			@user.save
 			session[:user_id] = @user.id
-			# redirect to '/projects'
 			redirect to '/'
 		end
 	end
@@ -41,7 +40,6 @@ class UsersController < ApplicationController
 		user = User.find_by(:username => params[:username])
 		if user && user.authenticate(params[:password])
 			session[:user_id] = user.id
-			# redirect to "/projects"
 			redirect to "/"
 		else
 			redirect to '/signup'
