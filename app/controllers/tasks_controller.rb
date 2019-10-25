@@ -1,3 +1,4 @@
+require 'pry'
 class TasksController < ApplicationController
 	get '/tasks' do
 		if logged_in?
@@ -20,9 +21,11 @@ class TasksController < ApplicationController
 
 	post '/createtask' do
 		@task = Task.new(
-			:name => params[:name],
+			:name => params[:name].capitalize,
 			:project_id => params[:project_id],
-			:user_id => current_user[:id]
+			:user_id => current_user[:id],
+			:complete => params[:complete] == 'on' ? true : false,
+			:due_date => params[:due_date]
 		)
 		@task.save
 		redirect to '/tasks'

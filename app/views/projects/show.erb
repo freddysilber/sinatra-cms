@@ -20,10 +20,14 @@
 			<tr>
 				<td><a href="/tasks/<%= t.id %>"><%= t.name %></a></td>
 				<td>
-					<input type="checkbox" value="false" disabled="disabled" />
+					<%if t.complete == true %>
+					<input type="checkbox" disabled="disabled" checked %>
+					<%else%>
+					<input type="checkbox" disabled="disabled" />
+					<%end%>
 				</td>
 				<td>
-					<input type="datetime" disabled="disabled" value="<%=Time.now%>" />
+					<p><%=t.due_date%></p>
 				</td>
 			</tr>
 			<% end %>

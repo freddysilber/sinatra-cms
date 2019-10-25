@@ -20,7 +20,7 @@ class ProjectsController < ApplicationController
 
 	post '/createproject' do
 		@project = Project.new(
-			:name => params[:name],
+			:name => params[:name].capitalize,
 			:user_id => current_user[:id]
 		)
 		@project.save
