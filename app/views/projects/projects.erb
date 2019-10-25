@@ -8,9 +8,8 @@
 </head>
 
 <body style="background: lightyellow">
-	<center>
-		<h1>Welcome, <%= current_user.username %>!</h1>
-		<h1>My Projects...</h1>
+	<div style="display: flex;">
+		<h1 style="margin: auto;">My Projects...</h1>
 		<% @projects.each do |p| %>
 		<% if p.user_id == current_user[:id] %>
 		<div style="border: 1px solid black; border-radius: 10px; margin: .25rem;">
@@ -23,7 +22,7 @@
 		</div>
 		<% end %>
 		<% end %>
-	</center>
+	</div>
 </body>
 
 </html>

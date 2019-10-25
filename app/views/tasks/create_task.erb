@@ -13,6 +13,10 @@
 		<form action="/createtask" method="post">
 			<label for="name">Task Name:</label>
 			<input type="text" name="name" />
+			<label for="complete">Complete:</label>
+			<input type="checkbox" name="complete">
+			<label for="due_date">Due Date:</label>
+			<input type="datetime" name="due_date">
 			<% @projects.each do |p| %>
 			<% if p.user_id == current_user[:id]%>
 			<label for="project_id"><%= p.name %></label>
