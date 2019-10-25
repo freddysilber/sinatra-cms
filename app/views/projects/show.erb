@@ -9,7 +9,7 @@
 
 <body style="background: lightyellow">
 	<center>
-		<h1><em><%= @project.name %></em></h1>
+		<h1>Project: <em><%= @project.name %></em></h1>
 		<table>
 			<tr>
 				<th>Task Name</th>
@@ -18,7 +18,7 @@
 			</tr>
 			<% @project.project_tasks.each do |t| %>
 			<tr>
-				<td><a href="/tasks/<%= t.id %>"><%= t.name %></a></td>
+				<td><em><a href="/tasks/<%= t.id %>"><%= t.name %></a></em></td>
 				<td>
 					<%if t.complete == true %>
 					<input type="checkbox" disabled="disabled" checked %>
