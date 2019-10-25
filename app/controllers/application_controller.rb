@@ -10,6 +10,7 @@ class ApplicationController < Sinatra::Base
   
 	get '/' do
 		@projects = Project.all
+		@tasks = Task.all
 		# @project_sum = Project.all.collect{|p| p.user_id.to_i == current_user.id.to_i}.length
 		erb :index
 	end

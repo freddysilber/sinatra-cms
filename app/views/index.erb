@@ -14,11 +14,15 @@
 			<h1>Welcome back, <%=current_user.username %>!</h1>
 			<h1>My Dashboard</h1>
 		</center>
-		<% @projects.each do |p| %>
-		<% if p.user_id == current_user.id %>
-		<p><a href="/projects/<%=p.id%>"><%= p.name %></a></p>
-		<% end %>
-		<% end %>
+		<div style="display: flex">
+			<% @projects.each do |p| %>
+			<% if p.user_id == current_user.id %>
+			<div style="padding: .25rem; margin: .25rem; border: 1px solid lightgray">
+				<p><a href="/projects/<%=p.id%>"><%= p.name %></a></p>
+			</div>
+			<% end %>
+			<% end %>
+		</div>
 		<% else %>
 		<center>
 			<h1><em>Welcome to your personal task manager!</em></h1>
