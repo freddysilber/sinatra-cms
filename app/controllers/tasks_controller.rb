@@ -10,16 +10,16 @@ class TasksController < ApplicationController
 		end
 	end
 
-	get '/newtask' do
+	get '/tasks/new' do
 		if logged_in?
 			@projects = Project.all
-			erb :'tasks/create_task'
+			erb :'tasks/new'
 		else
 			redirect to '/login'
 		end
 	end
 
-	post '/createtask' do
+	post '/tasks' do
 		@task = Task.new(
 			:name => params[:name].capitalize,
 			:project_id => params[:project_id],

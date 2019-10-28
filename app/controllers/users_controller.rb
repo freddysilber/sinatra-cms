@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 	
 	get '/signup' do
 		if !logged_in?
-			erb :'users/create_user', locals: {message: "Create a new account!"}
+			erb :'users/new', locals: {message: "Create a new account!"}
 		else
 			redirect to '/projects'
 		end 
