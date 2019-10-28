@@ -9,20 +9,18 @@
 
 <body style="background: lightyellow">
 	<h1 style="margin: auto;">My Projects...</h1>
-	<div class="display: flex">
+	<table>
+		<tr>
+			<th>Project</th>
+		</tr>
 		<% @projects.each do |p| %>
-		<% if p.user_id == current_user[:id] %>
-		<div style="border: 1px solid black; border-radius: 10px; margin: .25rem;">
-			<p>Project: <b><em><a href="/projects/<%=p.id%>"><%= p.name %></a></em></b></p>
-			<% @tasks.each do |t| %>
-			<% if t.project_id == p.id %>
-			<p>Task: <b><em><a href="/tasks/<%=t.id%>"><%= t.name %></a></em></b></p>
-			<% end %>
-			<% end %>
-		</div>
+		<tr>
+			<td>
+				<em><a href="/projects/<%=p.id%>"><%= p.name %></a></em>
+			</td>
+		</tr>
 		<% end %>
-		<% end %>
-	</div>
+	</table>
 </body>
 
 </html>

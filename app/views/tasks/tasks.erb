@@ -8,22 +8,31 @@
 </head>
 
 <body style="background: lightblue">
-	<center>
-		<h1>Welcome, <%= current_user.username %>!</h1>
-		<h1>Your Tasks...</h1>
+	<h1>Your Tasks...</h1>
+	<table>
+		<tr>
+			<th>Task</th>
+			<th>Complete</th>
+			<th>Project</th>
+		</tr>
 		<% @tasks.each do |t| %>
-		<% if t.user_id == current_user[:id] %>
-		<div style="border: 1px solid black; border-radius: 10px; margin: .25rem;">
-			<p>Task: <b><em><a href="/tasks/<%=t.id%>"><%= t.name %></a></em></b></p>
-			<% @projects.each do |p| %>
-			<% if p.id == t.project_id %>
-			<p>Project: <b><em><a href="/projects/<%=t.project.id%>"><%= p.name %></a></em></b></p>
-			<% end %>
-			<% end %>
-		</div>
+		<tr>
+			<td>
+				<em><a href="/tasks/<%=t.id%>"><%= t.name %></a></em>
+			</td>
+			<td>
+				<%if t.complete == true %>
+				<input type="checkbox" disabled="disabled" checked %>
+				<%else%>
+				<input type="checkbox" disabled="disabled" />
+				<%end%>
+			</td>
+			<td>
+				<em><a href="/projects/<%= t.project.id %>"><%= t.project.name %></a></em>
+			</td>
+		</tr>
 		<% end %>
-		<% end %>
-	</center>
+	</table>
 </body>
 
 </html>
