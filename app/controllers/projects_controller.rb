@@ -4,8 +4,11 @@ class ProjectsController < ApplicationController
 		if logged_in?
 			@projects = Project.all
 			@tasks = Task.all
+			flash[:message] = 'PLEASE LOG IN BEFORE YOU VIEW YOUR PROJECTS.'
+			# @message = 
 			erb :'projects/projects'
 		else
+			flash[:message] = 'PLEASE LOG IN BEFORE YOU VIEW YOUR PROJECTS.'
 			redirect to '/login'
 		end
 	end

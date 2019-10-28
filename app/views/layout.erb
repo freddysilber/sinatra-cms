@@ -10,6 +10,15 @@
 </head>
 
 <body>
+	<div>
+		<% if flash[:message] %>
+			<p><%= flash[:message] %></p>
+		<%end%>
+	</div>
+
+
+
+
 	<div style="display: flex;">
 		<div>
 			<% if logged_in? %>

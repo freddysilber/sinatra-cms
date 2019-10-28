@@ -1,4 +1,4 @@
-require './config/environment'
+# require './config/environment'
 
 class ApplicationController < Sinatra::Base
 	configure do
@@ -6,6 +6,8 @@ class ApplicationController < Sinatra::Base
 		set :public_folder, 'public'
 		enable :sessions
 		set :session_secret, "freddy_secret"
+
+		register Sinatra::Flash
 	end
   
 	get '/' do
