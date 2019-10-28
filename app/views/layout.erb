@@ -10,15 +10,6 @@
 </head>
 
 <body>
-	<div>
-		<% if flash[:message] %>
-			<p><%= flash[:message] %></p>
-		<%end%>
-	</div>
-
-
-
-
 	<div style="display: flex;">
 		<div>
 			<% if logged_in? %>
@@ -27,7 +18,9 @@
 				<li><a href="/projects">My Projects</a></li>
 				<li><a href="/tasks">My Tasks</a></li>
 				<li><a href="/newproject">New Project</a></li>
+				<li><a href="/projects/new">New Project REST</a></li>
 				<li><a href="/newtask">New Task</a></li>
+				<li><a href="/tasks/neww">New Task REST</a></li>
 				<li><a href="/logout">Logout</a></li>
 			</ul>
 			<% else %>
@@ -39,6 +32,13 @@
 			<% end %>
 		</div>
 		<div style="width: 100%;">
+			<div id="flash">
+				<center>
+					<% if flash[:message] %>
+					<p><%= flash[:message] %></p>
+					<%end%>
+				</center>
+			</div>
 			<%= yield %>
 		</div>
 	</div>

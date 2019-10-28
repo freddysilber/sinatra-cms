@@ -42,6 +42,7 @@ class UsersController < ApplicationController
 			session[:user_id] = user.id
 			redirect to "/"
 		else
+			flash[:message] = 'Your profile was not found. Create an account to get started!'
 			redirect to '/signup'
 		end
 	end

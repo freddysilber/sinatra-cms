@@ -2,12 +2,11 @@
 
 class ApplicationController < Sinatra::Base
 	configure do
+		register Sinatra::Flash
 		set :views, "app/views"
 		set :public_folder, 'public'
 		enable :sessions
 		set :session_secret, "freddy_secret"
-
-		register Sinatra::Flash
 	end
   
 	get '/' do

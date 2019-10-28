@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
 		if logged_in?
 			@projects = Project.all
 			@tasks = Task.all
-			flash[:message] = 'PLEASE LOG IN BEFORE YOU VIEW YOUR PROJECTS.'
+			flash[:message] = '/projects flash message.'
 			# @message = 
 			erb :'projects/projects'
 		else
@@ -18,6 +18,15 @@ class ProjectsController < ApplicationController
 			erb :'projects/create_project'
 		else
 			redirect to '/login'
+		end
+	end
+
+	get '/projects/new' do
+		if logged_in?
+			erb :'projects/new'
+		else
+			flash[:message] = 'Please log in before you create a new project.'
+			redirect to 'login'
 		end
 	end
 # projects

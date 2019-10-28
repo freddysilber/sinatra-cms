@@ -1,3 +1,11 @@
+#flash {
+    padding: 1rem;
+    background: #EEE;
+    border-radius: 10px;
+}
+input {
+    padding: .5rem;
+}
 html, input, a {
     font-family: 'Nunito', sans-serif;
 }
