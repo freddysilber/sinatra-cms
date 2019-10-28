@@ -1,6 +1,6 @@
 require 'pry'
 class ProjectsController < ApplicationController
-	get '/projects' do
+	get '/projects' do 
 		if logged_in?
 			@projects = Project.all
 			@tasks = Task.all
@@ -9,7 +9,7 @@ class ProjectsController < ApplicationController
 			redirect to '/login'
 		end
 	end
-
+# projects/new
 	get '/newproject' do
 		if logged_in?
 			erb :'projects/create_project'
@@ -17,7 +17,7 @@ class ProjectsController < ApplicationController
 			redirect to '/login'
 		end
 	end
-
+# projects
 	post '/createproject' do
 		@project = Project.new(
 			:name => params[:name].capitalize,
