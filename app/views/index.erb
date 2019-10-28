@@ -17,8 +17,13 @@
 		<div style="display: flex">
 			<% @projects.each do |p| %>
 			<% if p.user_id == current_user.id %>
-			<div style="padding: .25rem; margin: .25rem; border: 1px solid lightgray">
-				<p><a href="/projects/<%=p.id%>"><%= p.name %></a></p>
+			<div style="padding: .25rem; margin: .25rem; border: 1px solid black; border-radius: 10px">
+				<p>Project: <a href="/projects/<%=p.id%>"><%= p.name %></a></p>
+				<% @tasks.each do |t| %>
+				<% if t.project_id == p.id %>
+				<div style="margin: 0rem 1rem 0rem 2rem"><p>Task: <a href="/tasks/<%=t.id%>"><%= t.name %></a></p></div>
+				<% end %>
+				<% end %>
 			</div>
 			<% end %>
 			<% end %>
