@@ -17,14 +17,20 @@ class UsersController < ApplicationController
 		if params[:username] == "" || params[:email] == "" || params[:password] == ""
 			redirect to '/signup'
 		else
-			@user = User.new(
-				:username => params[:username], 
-				:email => params[:email], 
-				:password => params[:password]
-			)
-			@user.save
-			session[:user_id] = @user.id
-			redirect to '/'
+			new_username = params[:username]
+			if !User.find_by(:username => new_username)
+				@user = User.new(
+					:username => params[:username], 
+					:email => params[:email], 
+					:password => params[:password]
+				)
+				@user.save
+				session[:user_id] = @user.id
+				redirect to '/'
+			else
+				flash[:message] = 'A user with that username already exists. Please try again!'
+				redirect to '/signup'
+			end
 		end
 	end
 
