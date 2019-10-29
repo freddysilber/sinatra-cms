@@ -18,6 +18,8 @@
 				<th>Task Name</th>
 				<th>Complete</th>
 				<th>Due Date</th>
+				<th></th>
+				<th></th>
 			</tr>
 			<% @project.project_tasks.each do |t| %>
 			<tr>
@@ -31,6 +33,12 @@
 				</td>
 				<td>
 					<p><%=t.due_date%></p>
+				</td>
+				<td>
+					<a class="button" style="padding: 5px; margin: 0" href="/tasks/<%= t.id %>/edit">Edit</a>
+				</td>
+				<td>
+					<a class="button" style="padding: 5px; margin: 0" href="/tasks/<%= t.id %>/delete">Delete</a>
 				</td>
 			</tr>
 			<% end %>

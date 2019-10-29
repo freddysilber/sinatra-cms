@@ -9,7 +9,7 @@
 
 <body style="background: lightyellow">
 	<center>
-		<h1>Task: <em><%= @task.name %></em></h1>
+		<h1 style="color: red">Are you sure you want to delete this task? - <em><%= @task.name %></em></h1>
 		<h1>Complete: <em><%= @task.complete %></em></h1>
 		<h1>Due Date: <em><%= @task.due_date %></em></h1>
 		<h1>Project: <em><a href="/projects/<%= @task.project.id %>"><%= @task.project.name %></a></em></h1>
