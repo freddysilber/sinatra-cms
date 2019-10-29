@@ -13,6 +13,7 @@
 		<tr>
 			<th>Project</th>
 			<th></th>
+			<th></th>
 		</tr>
 		<% @projects.each do |p| %>
 		<tr>
@@ -21,6 +22,9 @@
 			</td>
 			<td>
 				<a class="button" style="padding: 5px; margin: 0" href="/projects/<%= p.id %>/edit">Edit</a>
+			</td>
+			<td>
+				<a class="button" style="padding: 5px; margin: 0" href="/projects/<%= p.id %>/delete">Delete</a>
 			</td>
 		</tr>
 		<% end %>

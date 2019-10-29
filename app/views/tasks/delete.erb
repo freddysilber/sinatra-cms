@@ -8,13 +8,18 @@
 </head>
 
 <body style="background: lightyellow">
-	<a class="button" style="float: left" href="/tasks/<%= @task.id %>/delete">Delete</a>
-	<a class="button" style="float: right" href="/tasks/<%= @task.id %>/edit">Edit <%= @task.name %></a>
 	<center>
 		<h1>Task: <em><%= @task.name %></em></h1>
 		<h1>Complete: <em><%= @task.complete %></em></h1>
 		<h1>Due Date: <em><%= @task.due_date %></em></h1>
 		<h1>Project: <em><a href="/projects/<%= @task.project.id %>"><%= @task.project.name %></a></em></h1>
+		<br/>
+		<br/>
+		<br/>
+		<form action="/tasks/<%= @task.id %>/delete" method="post">
+			<input id="hidden" type="hidden" name="_method" value="delete">
+			<input type="submit" value="Delete">
+		</form>
 	</center>
 </body>
 

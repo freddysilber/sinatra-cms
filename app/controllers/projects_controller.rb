@@ -4,8 +4,6 @@ class ProjectsController < ApplicationController
 		if logged_in?
 			@projects = Project.all
 			@tasks = Task.all
-			# flash[:message] = '/projects flash message.'
-			# @message = 
 			erb :'projects/projects'
 		else
 			flash[:message] = 'PLEASE LOG IN BEFORE YOU VIEW YOUR PROJECTS.'
@@ -51,10 +49,31 @@ class ProjectsController < ApplicationController
 		end
 	end
 
-	patch '/projects/:id' do #edit action
+	patch '/projects/:id' do
 		@project = Project.find(params[:id])
 		@project.name = params[:name]
 		@project.save
 		redirect to "/projects/#{@project.id}"
+	end
+
+	get '/projects/:id/delete' do
+		if logged_in?
+			@project = Project.find(params[:id])
+			erb :'projects/delete'
+		else
+			redirect to 'login'
+		end
+	end
+
+	delete '/projects/:id/delete' do
+		@project = Project.find(params[:id])
+		tasks = Task.all
+		tasks.each do |t|
+			if t.project_id == @project.id
+				t.delete
+			end
+		end
+		@project.delete
+		redirect to '/projects'
 	end
 end

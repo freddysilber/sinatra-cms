@@ -56,4 +56,19 @@ class TasksController < ApplicationController
 		@task.save
 		redirect to "/tasks/#{@task.id}"
 	end
+
+	get '/tasks/:id/delete' do
+		if logged_in? 
+			@task = Task.find(params[:id])
+			erb :'tasks/delete'
+		else
+			redirect to 'login'
+		end
+	end
+
+	delete '/tasks/:id/delete' do
+		@task = Task.find(params[:id])
+		@task.delete
+		redirect to '/tasks'
+	end
 end
