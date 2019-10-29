@@ -2,8 +2,9 @@ require 'pry'
 class ProjectsController < ApplicationController
 	get '/projects' do 
 		if logged_in?
-			@projects = Project.all
-			@tasks = Task.all
+			@my_projects = Project.my_projects(current_user.id)
+			# @tasks = Task.all
+			# @projects = Project.all
 			erb :'projects/projects'
 		else
 			flash[:message] = 'PLEASE LOG IN BEFORE YOU VIEW YOUR PROJECTS.'

@@ -22,8 +22,6 @@ class ApplicationController < Sinatra::Base
 				@my_tasks << t
 			end
 		end
-		# @projects = Project.all
-		# @tasks = Task.all
 		erb :index
 	end
 
