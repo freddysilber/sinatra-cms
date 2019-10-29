@@ -18,6 +18,7 @@
 			<% @projects.each do |p| %>
 			<% if p.user_id == current_user.id %>
 			<div style="padding: 1rem; margin: .25rem; border: 1px solid black; border-radius: 10px; min-width: 20rem">
+				<a class="button" style="float: right" href="/projects/<%= p.id %>/delete">Delete</a>
 				<a class="button" style="float: right" href="/projects/<%= p.id %>/edit">Edit</a>
 				<p>Project: <a href="/projects/<%=p.id%>"><%= p.name %></a></p>
 				<% @tasks.each do |t| %>
