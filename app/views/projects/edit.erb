@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>CMS Task Manager</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body style="background: lightyellow">
+	<center>
+		<h1>Edit <%= @project.name %></h1>
+		<form action="/projects/<%= @project.id %>" method="post">
+			<input id="hidden" type="hidden" name="_method" value="patch">
+			<label for="name">Project Name:</label>
+			<input type="text" name="name">
+			<br />
+			<br />
+			<br />
+			<input type="submit" value="submit">
+		</form>
+		<br />
+		<br />
+		<br />
+		<a class="button" href="/projects">Cancel</a>
+	</center>
+</body>
+
+</html>

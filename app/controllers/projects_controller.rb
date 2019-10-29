@@ -40,4 +40,21 @@ class ProjectsController < ApplicationController
 			redirect to '/login'
 		end
 	end
+
+	get '/projects/:id/edit' do
+		if logged_in?
+			@project = Project.find(params[:id])
+			erb :'projects/edit'
+		else
+			flash[:message] = 'Please log int before you edit a project'
+			redirect to 'login'
+		end
+	end
+
+	patch '/projects/:id' do #edit action
+		@project = Project.find(params[:id])
+		@project.name = params[:name]
+		@project.save
+		redirect to "/projects/#{@project.id}"
+	end
 end

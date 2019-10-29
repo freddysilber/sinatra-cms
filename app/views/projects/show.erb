@@ -9,6 +9,8 @@
 
 <body style="background: lightyellow">
 	<center>
+		<a class="button" style="float: left" href="/tasks/new">Add Task</a>
+		<a class="button" style="float: right" href="/projects/<%= @project.id %>/edit">Edit <%= @project.name %></a>
 		<h1>Project: <em><%= @project.name %></em></h1>
 		<table>
 			<tr>

@@ -14,6 +14,7 @@
 			<th>Task</th>
 			<th>Complete</th>
 			<th>Project</th>
+			<th></th>
 		</tr>
 		<% @tasks.each do |t| %>
 		<tr>
@@ -29,6 +30,9 @@
 			</td>
 			<td>
 				<em><a href="/projects/<%= t.project.id %>"><%= t.project.name %></a></em>
+			</td>
+			<td>
+				<a class="button" style="padding: 5px; margin: 0" href="/tasks/<%= t.id %>/edit">Edit</a>
 			</td>
 		</tr>
 		<% end %>

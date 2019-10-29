@@ -30,13 +30,13 @@
 			<% end %>
 		</div>
 		<div style="width: 100%;">
+			<% if flash[:message] %>
 			<div id="flash">
 				<center>
-					<% if flash[:message] %>
 					<p><%= flash[:message] %></p>
-					<%end%>
 				</center>
 			</div>
+			<%end%>
 			<%= yield %>
 		</div>
 	</div>
