@@ -13,7 +13,7 @@
 		<form action="/projects/<%= @project.id %>" method="post">
 			<input id="hidden" type="hidden" name="_method" value="patch">
 			<label for="name">Project Name:</label>
-			<input type="text" name="name">
+			<input type="text" placeholder="<%= @project.name %>" name="name">
 			<br />
 			<br />
 			<br />

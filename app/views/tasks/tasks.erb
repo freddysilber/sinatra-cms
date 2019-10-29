@@ -13,7 +13,9 @@
 		<tr>
 			<th>Task</th>
 			<th>Complete</th>
+			<th>Due Date</th>
 			<th>Project</th>
+			<th></th>
 			<th></th>
 		</tr>
 		<% @tasks.each do |t| %>
@@ -29,10 +31,16 @@
 				<%end%>
 			</td>
 			<td>
+				<p><%= t.due_date %></p>
+			</td>
+			<td>
 				<em><a href="/projects/<%= t.project.id %>"><%= t.project.name %></a></em>
 			</td>
 			<td>
 				<a class="button" style="padding: 5px; margin: 0" href="/tasks/<%= t.id %>/edit">Edit</a>
+			</td>
+			<td>
+				<a class="button" style="padding: 5px; margin: 0" href="/tasks/<%= t.id %>/delete">Delete</a>
 			</td>
 		</tr>
 		<% end %>

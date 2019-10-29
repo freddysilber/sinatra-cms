@@ -53,6 +53,8 @@ class TasksController < ApplicationController
 	patch '/tasks/:id' do
 		@task = Task.find(params[:id])
 		@task.name = params[:name]
+		@task.due_date = params[:due_date]
+		@task.complete = params[:complete]
 		@task.save
 		redirect to "/tasks/#{@task.id}"
 	end
