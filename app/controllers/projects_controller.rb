@@ -3,8 +3,6 @@ class ProjectsController < ApplicationController
 	get '/projects' do 
 		if logged_in?
 			@my_projects = Project.my_projects(current_user.id)
-			# @tasks = Task.all
-			# @projects = Project.all
 			erb :'projects/projects'
 		else
 			flash[:message] = 'PLEASE LOG IN BEFORE YOU VIEW YOUR PROJECTS.'
@@ -22,20 +20,31 @@ class ProjectsController < ApplicationController
 	end
 
 	post '/projects' do
-		@project = Project.new(
-			:name => params[:name].capitalize,
-			:user_id => current_user[:id]
-		)
-		@project.save
-		flash[:message] = @project.name + ' was created!'
-		redirect to '/projects'
+		if params[:name] == "" || params[:name] == nil
+			flash[:message] = 'Your project didnt have a name. Please try again!'
+			redirect to 'projects/new'
+		else
+			@project = Project.new(
+				:name => params[:name].capitalize,
+				:user_id => current_user[:id]
+			)
+			@project.save
+			flash[:message] = @project.name + ' was created!'
+			redirect to '/projects'
+		end
 	end
 
 	get '/projects/:id' do
 		if logged_in?
 			@project = Project.find(params[:id])
-			erb :'projects/show'
+			if @project.user_id == current_user.id
+				erb :'projects/show'
+			else
+				flash[:message] = 'The project you tried to view does not belong to you. Please try another one!'
+				redirect to 'projects'
+			end
 		else
+			flash[:message] = 'Please log in!'
 			redirect to '/login'
 		end
 	end
@@ -43,9 +52,14 @@ class ProjectsController < ApplicationController
 	get '/projects/:id/edit' do
 		if logged_in?
 			@project = Project.find(params[:id])
-			erb :'projects/edit'
+			if @project.user_id == current_user.id
+				erb :'projects/edit'
+			else
+				flash[:message] = 'The project you tried to edit does not belong to you. Please try another one!'
+				redirect to 'projects'
+			end
 		else
-			flash[:message] = 'Please log int before you edit a project'
+			flash[:message] = 'Please log in before you edit a project'
 			redirect to 'login'
 		end
 	end
@@ -60,8 +74,14 @@ class ProjectsController < ApplicationController
 	get '/projects/:id/delete' do
 		if logged_in?
 			@project = Project.find(params[:id])
-			erb :'projects/delete'
+			if @project.user_id == current_user.id
+				erb :'projects/delete'
+			else
+				flash[:message] = 'The project you tried to delete does not belong to you. Please try another one!'
+				redirect to 'projects'
+			end
 		else
+			flash[:message] = 'Please log in!'
 			redirect to 'login'
 		end
 	end

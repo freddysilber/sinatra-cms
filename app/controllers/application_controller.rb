@@ -10,18 +10,8 @@ class ApplicationController < Sinatra::Base
 	end
   
 	get '/' do
-		@my_projects = []
-		@my_tasks = []
-		Project.all.each do |p|
-			if p.user_id == current_user.id
-				@my_projects << p
-			end
-		end
-		Task.all.each do |t|
-			if t.user_id == current_user.id
-				@my_tasks << t
-			end
-		end
+		@my_projects = Project.my_projects(current_user.id)
+		@my_tasks = Task.my_tasks(current_user.id)
 		erb :index
 	end
 
