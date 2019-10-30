@@ -1,4 +1,3 @@
-require 'pry'
 class ProjectsController < ApplicationController
 	get '/projects' do 
 		if logged_in?

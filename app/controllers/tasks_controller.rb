@@ -1,4 +1,3 @@
-require 'pry'
 class TasksController < ApplicationController
 	get '/tasks' do
 		if logged_in?
