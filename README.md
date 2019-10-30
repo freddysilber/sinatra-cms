@@ -10,6 +10,7 @@ Project management style personal task manager with projects and tasks
 
 
 -Author: Freddy Silber 
+
 -Date: Fall 19'
 
 ## Walkthrough
@@ -26,12 +27,13 @@ Project management style personal task manager with projects and tasks
 
 ## How To Use
 
-Search in the command line for a word and recieve its definition as well as the Word of the Day! After forking this repo and getting the gem installed, open a new terminal window and 'cd' to the /dictionary-cli folder you just cloned.
-When inside the folder, run './bin/dictionary' in the command prompt.
+After you log into your account or create a new one, users can easily navigate and view their personal projects and to-do lists. 
+Users can create new projects and tasks as well as delete and edit them once they're running.
+You can also mark tasks as complete to check off the tasks you finish to stay organized.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/dictionary. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/sinatra-cms. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
