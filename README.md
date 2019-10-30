@@ -1,4 +1,4 @@
-# sinatra-cms
+# sinatra-cms Personal task manager/ project manager application
 Project management style personal task manager with projects and tasks
 
             X__O
@@ -8,10 +8,9 @@ Project management style personal task manager with projects and tasks
 
 
 
-## CLI Data Gem Portfolio Project
 
-- Freddy Silber 
-- Fall 19'
+-Author: Freddy Silber 
+-Date: Fall 19'
 
 ## Walkthrough
 
