@@ -10,8 +10,10 @@ class ApplicationController < Sinatra::Base
 	end
   
 	get '/' do
-		@my_projects = Project.my_projects(current_user.id)
-		@my_tasks = Task.my_tasks(current_user.id)
+		if logged_in?
+			@my_projects = Project.my_projects(current_user.id)
+			@my_tasks = Task.my_tasks(current_user.id)
+		end
 		erb :index
 	end
 
