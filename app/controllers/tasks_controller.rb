@@ -85,6 +85,7 @@ class TasksController < ApplicationController
 			else
 				flash[:message] = 'The task you tried to delete does not belong to you. Please try another one!'
 				redirect to 'tasks'
+			end
 		else
 			flash[:message] = 'Please log in!'
 			redirect to 'login'
