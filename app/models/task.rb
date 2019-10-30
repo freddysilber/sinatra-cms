@@ -8,5 +8,6 @@ class Task < ActiveRecord::Base
 				tasks << t
 			end
 		end
+		tasks
 	end
 end

@@ -22,7 +22,7 @@
 			<br />
 			<label for="project_id">Project:</label>
 			<select name="project_id">
-				<% @projects.each do |p| %>
+				<% @my_projects.each do |p| %>
 				<option value="<%=p.id%>"><%=p.name%></option>
 				<% end %>
 			</select>
