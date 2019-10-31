@@ -17,9 +17,14 @@ YouTube: https://www.youtube.com/watch?v=h1DsQGNnf6k&feature=youtu.be
 1. Fork and Clone this repo to your desktop
 2. Open this repository in your IDE
 2. 'cd' to the folder in a terminal window
-3. run $ 'sudo bundle install'
-4. run $ 'rake db:migrate' to create the sqlite3 database
-4. run $ 'shotgun' to start your local server
+3. run 
+      $ 'sudo bundle install'
+4. run 
+      $ 'rake db:migrate' 
+    to create the sqlite3 database
+4. run 
+      $ 'shotgun' 
+    to start your local server
 5. navigate to the server url to view the application
 
 ## How To Use
