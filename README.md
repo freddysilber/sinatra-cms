@@ -1,5 +1,5 @@
-# sinatra-cms Personal task manager/ project manager application
-Project management style personal task manager with projects and tasks
+# Sinatra-CMS Personal Task Manager App
+
 
             X__O
           \ (\(
@@ -8,14 +8,9 @@ Project management style personal task manager with projects and tasks
 
 
 
+## Demonstration
 
--Author: Freddy Silber 
-
--Date: Fall 19'
-
-## Walkthrough
-
--- YouTube: https://www.youtube.com/watch?v=h1DsQGNnf6k&feature=youtu.be
+YouTube: https://www.youtube.com/watch?v=h1DsQGNnf6k&feature=youtu.be
 
 ## Installation
 
@@ -25,7 +20,7 @@ Project management style personal task manager with projects and tasks
 4. run 'shotgun' to start your local server
 5. navigate to the server url to view the application
 
-## How To Use
+## How To
 
 After you log into your account or create a new one, users can easily navigate and view their personal projects and to-do lists. 
 Users can create new projects and tasks as well as delete and edit them once they're running.
