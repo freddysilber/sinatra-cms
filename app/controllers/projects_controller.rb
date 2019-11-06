@@ -23,11 +23,13 @@ class ProjectsController < ApplicationController
 			flash[:message] = 'Your project didnt have a name. Please try again!'
 			redirect to 'projects/new'
 		else
-			@project = Project.new(
-				:name => params[:name].capitalize,
-				:user_id => current_user[:id]
-			)
-			@project.save
+			@project = current_user.projects.create(name: params[:name].capitalize)
+
+			# @project = Project.new(
+			# 	:name => params[:name].capitalize,
+			# 	:user_id => current_user[:id]
+			# )
+			# @project.save
 			flash[:message] = @project.name + ' was created!'
 			redirect to '/projects'
 		end
