@@ -1,6 +1,9 @@
 # Sinatra-CMS Personal Task Manager App
 
 ## Video Demo: https://www.youtube.com/watch?v=iXgUmVZfpKQ
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=iXgUmVZfpKQ" target="_blank">
+  <img src="http://img.youtube.com/vi/iXgUmVZfpKQ/0.jpg" alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" />
+</a>
 
 ## Installation
 
